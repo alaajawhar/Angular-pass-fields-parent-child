@@ -9,10 +9,17 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()"> change first element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">delete first element</button>
       <!-- here we are passing the "serverElement"(which is an element
            of serverElements to a field in the app-server-element
            called "SrvElement"-->
-      <app-server-element [SrvElement]="serverElement" *ngFor="let serverElement of serverElements"></app-server-element>
+      <app-server-element [SrvElement]="serverElement" *ngFor="let serverElement of serverElements">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
