@@ -1,0 +1,18 @@
+<div class="container">
+  <!--  here we are listening on an event threw by child component
+    and take an field from it (event)
+  -->
+<app-cockpit
+  (redServer)="onServerAdded($event)"
+  (blueServer)="onBlueprintAdded($event)"
+></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- here we are passing the "serverElement"(which is an element
+           of serverElements to a field in the app-server-element
+           called "SrvElement"-->
+      <app-server-element [SrvElement]="serverElement" *ngFor="let serverElement of serverElements"></app-server-element>
+    </div>
+  </div>
+</div>
