@@ -15,7 +15,7 @@
            of serverElements to a field in the app-server-element
            called "SrvElement"-->
       <app-server-element [SrvElement]="serverElement" *ngFor="let serverElement of serverElements">
-        <p>
+        <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">{{ serverElement.content }}</em>
         </p>
